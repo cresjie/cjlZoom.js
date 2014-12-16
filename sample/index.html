@@ -1,0 +1,181 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/cjlZoom.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/cjlZoom-min.js"></script>
+<script>
+	$(function(){
+		$('.img1').cjlZoom();
+		$('.img2').cjlZoom({style:'overlay'});
+		$('.img3').cjlZoom({style:'outside',width:300,height:300 });
+
+		$('.header li a,.back-to-top').click(function(e){
+			e.preventDefault();
+			$('html,body').animate({scrollTop:$('#' + this.href.split('#')[1]).offset().top});
+		});
+	});
+</script>
+<script>
+/*
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54753373-1', 'auto');
+  ga('send', 'pageview');
+*/
+</script>
+</head>
+
+<body>
+	<div class="main-container">
+		<div class="header">
+			<ul>
+				<li> <a href="#basic">Basic</a></li>
+				<li> <a href="#performance">Optimal Performace</a></li>
+				<li> <a href="#zoom_styles">Zoom Styles</a></li>
+				<li> <a href="#API">API</a></li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="title">
+				<h1>CJLZoom</h1>
+				<p>Lightweight,easy to use JQuery image zoom</p>
+				<a href="https://github.com/cresjie/cjlZoom.js/archive/master.zip" style="color:red">[Download (4kb)]</a> |
+				<a href="https://github.com/cresjie/cjlZoom.js">Fork me on <font color="green">Github</font> </a>
+			</div>
+
+			<div class="installation">
+   				<h3>Installation</h3>
+   				<p class="sub-info">Requires jQuery 1.6+</p>
+   				<div class="codebox">
+   					&lt;<span class="link-tag">link</span> rel="stylesheet" href="cjlZoom.css"&gt;<br>
+   					&lt;<span class="script-tag">script</span> src="jquery-1.10.2.min.js"&gt; &lt;<span class="script-tag">/script</span>&gt;<br>
+   					&lt;<span class="script-tag">script</span> src="cjlZoom-min.js"&gt; &lt;<span class="script-tag">/script</span>&gt;
+   				</div>
+   			</div>
+
+   			<div class="wrapper" id="basic">
+   				<h3 class="cat-title">Basic Usage</h3>
+   				<div class="row">
+   					<img src="images/watch-small.jpg" class="img1" data-img-large="images/watch.jpg">
+
+   					<div class="inner-wrapper">
+	   					<div class="inner-title"><h3>Basic Zooming</h3></div>
+	   						<div class="codebox pre-wrap">
+&lt;<span class="script-tag">script</span>&gt;
+$(document).ready(function(){
+<font color="#bbb">//directly pass the image element</font>
+   	$('#zoom1').cjlZoom();
+});
+&lt;<span class="script-tag">/script</span>&gt;
+
+<h4>HTML</h4>
+&lt;<i class="img-tag">img</i> id="zoom1" <font color="blue">src</font>="images/watch.jpg">   					
+							</div>
+   				</div>
+
+
+   				</div>
+
+   			</div>
+   			<br><br>
+   			<div class="wrapper" id="performance">
+   				<h3 class="cat-title">For Optimal Performance</h3>
+   				<p>Google Page Speed Test and GTMetrix will always suggest about having a serve scaled images. Large images being scaled to little would result
+   					in page speed penalty.It would be reasonable to have serve scaled images and thus HD pictures will be used as a zoom image.In your image
+   					element,just provide an attribute "data-img-large", that points to the HD image</p>
+
+   				<div class="row">
+   					<div class="inner-wrapper">
+	   					<div class="inner-title"><h3>Basic Zooming</h3></div>
+	   						<div class="codebox pre-wrap">
+&lt;<span class="script-tag">script</span>&gt;
+$(document).ready(function(){
+<font color="#bbb">//directly pass the image element</font>
+   	$('#zoom1').cjlZoom();
+});
+&lt;<span class="script-tag">/script</span>&gt;
+
+<h4>HTML</h4>
+&lt;<i class="img-tag">img</i> id="zoom1" <font color="blue">src</font>="images/watch-small.jpg" <font color="blue">data-img-large</font>="images/watch-large.jpg"&gt;   					
+							</div>
+   				</div>
+
+   				<img src="images/watch-small.jpg" class="img1" data-img-large="images/watch.jpg">
+   				</div>
+   			</div>
+
+   			<div class="title" id="zoom_styles"><h1>Zoom Styles</h1></div>
+   			<div class="wrapper">
+   				<ul style="list-style-type:none;text-align:center">
+   					<li>
+   						<h4>Lens(default)</h4>
+   						<img src="images/car1-small.jpg" class="img1" data-img-large="images/car1.jpg">
+   					</li>
+   					<li>
+   						<h4>Overlay</h4>
+   						<img src="images/sala-small.jpg" class="img2" data-img-large="images/sala.jpg">
+   					</li>
+   					<li>
+   						<h4>Outside</h4>
+   						<img src="images/tshirt-small.jpg" class="img3" data-img-large="images/tshirt.jpg">
+   					</li>
+   				</ul>
+   			</div>
+
+   			<div class="wrapper api" id="API">
+   				<h3 class="cat-title">API</h3>
+   				<h5 class="cat-title2">Options &amp; Callbacks</h5>
+   				<div class="inner-wrapper" style="width:90%">
+   					<ul>
+   						<li>width
+   							<span class="arg-type">[number] 200</span>
+   							<div class="explain">Sets the width of the zoom container</div>
+   						</li>
+
+   						<li>height
+   							<span class="arg-type">[number] 200</span>
+   							<div class="explain">Sets the height of the zoom container</div>
+   						</li>
+   						<li>style
+   							<span class="arg-type">[String] lens</span>
+   							<div class="explain">Sets zoom style</div>
+   						</li>
+   						<li>initZoom
+   							<span class="arg-type">[number] 2</span>
+   							<div class="explain">Sets initial Zoom when the image is hovered</div>
+   						</li>
+   						<li>minZoom
+   							<span class="arg-type">[number] 1.5</span>
+   							<div class="explain">Sets minimum image size of the zoom image when scrolled</div>
+   						</li>
+   						<li>maxZoom
+   							<span class="arg-type">[number] 10</span>
+   							<div class="explain">Sets maximum image size of the zoom image when scrolled</div>
+   						</li>
+   						<li>distance
+   							<span class="arg-type">[number] 10</span>
+   							<div class="explain">(Only for zoom style outside).Sets the distance between the image element and the zoom container</div>
+   						</li>
+   						<li>onShow
+   							<span class="arg-type">[function]</span>
+   							<div class="explain">triggers before the zoom container is shown</div>
+   						</li>
+   						<li>onClose
+   							<span class="arg-type">[function]</span>
+   							<div class="explain">triggers before the zoom container is closed</div>
+   						</li>
+
+   					</ul>
+   				</div>
+   			</div>
+		</div><!-- /.content-->
+
+	</div>
+</body>
+</html>

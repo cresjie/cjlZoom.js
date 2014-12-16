@@ -1,0 +1,138 @@
+*{padding:0;margin:0}
+body{
+	font-family: Verdana, Geneva, sans-serif;
+	background: #bbb;
+}
+/**GLOBAL*/
+a{
+	color:#000;
+	text-decoration: none;
+}
+
+.row > *{display: inline-block}
+.list-inline li{display: inline-block;}
+.demo-btn{
+	position: absolute;
+	right:0;
+	top:0;
+	padding:5px;
+	background: #59C0C0;
+	border: #5C8AEE 1px solid;
+	color: #fff;
+}
+.pre-wrap{white-space: pre}
+.demo-btn:hover{background:#439494}
+
+.main-container{
+	width:1000px;
+	margin:0 auto;
+	background:#fff;
+	box-shadow:0 0 10px;
+}
+.header{
+	background:#4ba8fd;
+	text-align: center;
+	padding:20px;
+}
+.header li{
+	list-style-type: none;
+	display: inline-block;
+}
+.header li a{padding:10px 55px;border-radius:20px}
+.header li a:hover{background:#bbb}
+.content{padding:10px}
+.title h1{color:#45B8CE;}
+.title p{
+	font-size:13px;
+	text-indent:25px
+}
+.installation{
+	margin-top:10px;
+}
+.sub-info{
+	font-size:12px;
+	padding:10px;
+}
+.wrapper{
+	margin-top: 10px
+}
+.cat-title{
+	color:#0B6E77;
+	font-size:25px
+}
+.cat-title2{
+	font-size:15px;
+	text-indent:5%;
+}
+.inner-wrapper{
+	//width: 90%;
+	width: 50%;
+	min-width: 250px;
+	margin:10px auto;
+	position: relative;
+
+}
+.inner-title{
+	padding:5px;
+	background: #e9e9e9;
+}
+.api ul li{padding:10px;}
+.arg-type{
+	font-size:13px;
+	color:#7E108D;
+}
+.explain{
+	color:#818181;
+	font-size:12px;
+	text-indent:10px
+}
+.back-to-top{
+	position:fixed;
+	right:10px;
+	bottom: 10px;
+	display:none;
+	height: 100px;
+	width: 43px;
+	background: url(../images/sword.png);
+}
+/*******Demon ****/
+#transition_transIn_direction2_s{display: none}
+#transition_transOut_direction2_s{display: none}
+#myModal,#myModal2{
+	background:#fff;
+	width:300;
+	
+	padding:10px;
+}
+#myModal div,,#myModal2 div{
+	overflow: auto;
+	height:255;
+}
+#myModal2 a{color:red;font-size: 12px}
+/******CodeBox ****/
+.codebox{
+	border:1px solid #bbb;
+	padding:10px;
+	font-size: 14px;
+	overflow:auto;
+}
+.codebox select{
+	background: #E0E0E0;
+	outline: none;
+	font-size: 14px;
+}
+.codebox input[type=number]{width:60px}
+.link-tag{color:#F794F6;}
+.script-tag{color:#B23131;}
+.obj-prop{color:#0BAF6E;}
+.obj-prop2{color:#4FB128;}
+.js-var{color:#006EE3;font-weight:bold}
+.img-tag{color:#E57910;}
+
+@media(max-width: 1000px){
+	.main-container{width: 100%}
+}
+/* dedicated style*/
+.list-inline span{
+	position: absolute;
+}
